@@ -5,12 +5,12 @@
 
 CREATE OR REPLACE FUNCTION list_category(TEXT) RETURNS TABLE(title TEXT) AS
 $$
-select title as list_category
+select film.title as list_category
 from film
 join film_category using (film_id)
 join category using (category_id)
 where category.name = $1
-order by title;
+order by film.title;
 $$
 LANGUAGE SQL
 IMMUTABLE
