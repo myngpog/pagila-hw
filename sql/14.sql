@@ -6,5 +6,4 @@ select title from film
 join film_category using (film_id)
 join category using (category_id)
 where category.name = 'Family'
-group by title
-order by title
+order by title;
